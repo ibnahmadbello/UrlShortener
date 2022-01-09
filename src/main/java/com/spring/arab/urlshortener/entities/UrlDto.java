@@ -4,7 +4,6 @@ public class UrlDto {
 	private String url;
 	private String expirationDate; //Optional
 	public UrlDto(String url, String expirationDate) {
-		super();
 		this.url = url;
 		this.expirationDate = expirationDate;
 	}

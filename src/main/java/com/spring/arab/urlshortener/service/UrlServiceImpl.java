@@ -1,7 +1,6 @@
 package com.spring.arab.urlshortener.service;
 
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.apache.commons.lang3.StringUtils;
@@ -21,14 +20,17 @@ public class UrlServiceImpl implements UrlService{
 	
 	@Override
 	public Url generateShortLink(UrlDto urlDto) {
-		if(StringUtils.isNotEmpty(urlDto.getUrl()) {
+		if(StringUtils.isNotEmpty(urlDto.getUrl())) {
 			String encodedUrl = encodeUrl(urlDto.getUrl());
 			Url urlToPersist = new Url();
-			urlToPersist.setCreationTime(LocalDateTime.now());
+			urlToPersist.setCreationDate(LocalDateTime.now());
 			urlToPersist.setOriginalUrl(urlDto.getUrl());
 			urlToPersist.setShortLink(encodedUrl);
-			urlToPersist.setExpirationTime(getExpirationDate(urlDto.getExpirationDate(), urlToPersist.getCreationTime()));
+			urlToPersist.setExpirationDate(getExpirationDate(urlDto.getExpirationDate(), urlToPersist.getCreationDate()));
 			Url urlToRet = persistShortLink(urlToPersist);
+			if(urlToRet != null) {
+				return urlToRet;
+			}
 		}
 		return null;
 	}

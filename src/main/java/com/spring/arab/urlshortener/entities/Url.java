@@ -10,61 +10,60 @@ import javax.persistence.Lob;
 
 @Entity
 public class Url {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	@Lob
 	private String originalUrl;
 	private String shortLink;
-	private LocalDateTime creationTime;
-	private LocalDateTime expirationTime;
-	
-	public Url(long id, String originalUrl, String shortLink, LocalDateTime creationTime,
-			LocalDateTime expirationTime) {
+	private LocalDateTime creationDate;
+	private LocalDateTime expirationDate;
+	public Url(Long id, String originalurl, String shorturl, LocalDateTime creationDate, LocalDateTime expirationDate) {
 		this.id = id;
-		this.originalUrl = originalUrl;
-		this.shortLink = shortLink;
-		this.creationTime = creationTime;
-		this.expirationTime = expirationTime;
+		this.originalUrl = originalurl;
+		this.shortLink = shorturl;
+		this.creationDate = creationDate;
+		this.expirationDate = expirationDate;
 	}
-	
 	public Url() {
-	}	
-	
-	public long getId() {
+		// TODO Auto-generated constructor stub
+	}
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getOriginalUrl() {
 		return originalUrl;
 	}
-	public void setOriginalUrl(String originalUrl) {
-		this.originalUrl = originalUrl;
+	public void setOriginalUrl(String originalurl) {
+		this.originalUrl = originalurl;
 	}
 	public String getShortLink() {
 		return shortLink;
 	}
-	public void setShortLink(String shortLink) {
-		this.shortLink = shortLink;
+	public void setShortLink(String shorturl) {
+		this.shortLink = shorturl;
 	}
-	public LocalDateTime getCreationTime() {
-		return creationTime;
+	public LocalDateTime getCreationDate() {
+		return creationDate;
 	}
-	public void setCreationTime(LocalDateTime creationTime) {
-		this.creationTime = creationTime;
+	public void setCreationDate(LocalDateTime creationDate) {
+		this.creationDate = creationDate;
 	}
-	public LocalDateTime getExpirationTime() {
-		return expirationTime;
+	public LocalDateTime getExpirationDate() {
+		return expirationDate;
 	}
-	public void setExpirationTime(LocalDateTime expirationTime) {
-		this.expirationTime = expirationTime;
+	public void setExpirationDate(LocalDateTime expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 	@Override
 	public String toString() {
-		return "Url [id=" + id + ", originalUrl=" + originalUrl + ", shortLink=" + shortLink + ", creationTime="
-				+ creationTime + ", expirationTime=" + expirationTime + "]";
+		return "Url [id=" + id + ", originalurl=" + originalUrl + ", shorturl=" + shortLink + ", creationDate="
+				+ creationDate + ", expirationDate=" + expirationDate + "]";
 	}
-		
+	
+	
 }
