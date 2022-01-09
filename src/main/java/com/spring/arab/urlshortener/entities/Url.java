@@ -21,13 +21,15 @@ public class Url {
 	
 	public Url(long id, String originalUrl, String shortLink, LocalDateTime creationTime,
 			LocalDateTime expirationTime) {
-		super();
 		this.id = id;
 		this.originalUrl = originalUrl;
 		this.shortLink = shortLink;
 		this.creationTime = creationTime;
 		this.expirationTime = expirationTime;
 	}
+	
+	public Url() {
+	}	
 	
 	public long getId() {
 		return id;
